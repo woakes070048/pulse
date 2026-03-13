@@ -2,6 +2,8 @@
 
 **Execution visibility and process compliance for operations teams.**
 
+![Pulse screenshot](screenshot.png)
+
 Pulse is a **Process KPI Engine** that helps operations leaders see how well frontline teams execute standard procedures—daily checklists, SOPs, and corrective actions—with role-based dashboards, team roll-ups, and organizational insights.
 
 ---
