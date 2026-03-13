@@ -80,7 +80,7 @@ Pulse does **not** replace Jira, Asana, or Camunda. It complements them by focus
 
 ---
 
-## Screenshots
+
 
 *Place PNG or WebP files in `docs/screenshots/` (see [docs/screenshots/README.md](docs/screenshots/README.md) for the list). Use the Browser Tab or `node scripts/capture_screenshots.mjs` to capture; save into this folder so the images below render.*
 
