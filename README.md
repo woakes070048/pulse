@@ -80,61 +80,6 @@ Pulse does **not** replace Jira, Asana, or Camunda. It complements them by focus
 
 ---
 
-
-
-*Place PNG or WebP files in `docs/screenshots/` (see [docs/screenshots/README.md](docs/screenshots/README.md) for the list). Use the Browser Tab or `node scripts/capture_screenshots.mjs` to capture; save into this folder so the images below render.*
-
-
-### Dashboard
-
-*Execution dashboard: personal score, period selector, team bar chart (for managers).*
-
-![Dashboard](docs/screenshots/dashboard.png)
-
-### Team
-
-*Team page with My Team and All Teams tabs; score table by role, department, and branch.*
-
-![Team](docs/screenshots/team.png)
-
-### Team — levels open
-
-*Team view with hierarchy or filters in use.*
-
-![Team levels open](docs/screenshots/team-levels-open.png)
-
-### Operations
-
-*Operations tree with hierarchy expanded (e.g. Executive to Area Manager to Supervisor).*
-
-![Operations](docs/screenshots/operations.png)
-
-### Insights
-
-*Insights: date range and filters, score trends, department/branch comparison, performers, and more.*
-
-![Insights](docs/screenshots/insights.png)
-
-### Insights — drill-down
-
-*After clicking a department or branch bar: filtered employee table with scores.*
-
-![Insights drill-down](docs/screenshots/insights-drill.png)
-
-### User roles / profile
-
-*User profile or navigation showing role (alias) and permission-based visibility.*
-
-![User roles](docs/screenshots/user-roles.png)
-
-### My Tasks
-
-*My Tasks: today's SOP runs and checklist items.*
-
-![My Tasks](docs/screenshots/my-tasks.png)
-
----
-
 ## User Roles (System Roles)
 
 | Role | Typical use | Visibility |
@@ -163,9 +108,8 @@ Requires a [Frappe Bench](https://frappeframework.com/docs/user/en/installation)
 
 ```bash
 cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch version-16
+bench get-app https://github.com/tridz-dev/pulse 
 bench install-app pulse
-bench migrate
 ```
 
 After migration, default PM Roles and departments are created via **after_install**.
@@ -180,14 +124,6 @@ After migration, default PM Roles and departments are created via **after_instal
 
 ---
 
-## Contributing
-
-This app uses **pre-commit** for formatting and linting. Install and enable it:
-
-```bash
-cd apps/pulse
-pre-commit install
-```
 
 Pre-commit runs: ruff, eslint, prettier, pyupgrade.
 
