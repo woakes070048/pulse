@@ -116,11 +116,44 @@ After migration, default PM Roles and departments are created via **after_instal
 
 ### Demo data
 
-- **First-time setup:** When you run the Frappe setup wizard (e.g. after `bench new-site` and installing the app), a **Pulse** slide appears with a **“Load demo data for Pulse”** checkbox. If checked, demo data is enqueued when you complete the wizard (sample users, employees, SOPs, ~30 days of runs and scores).
-- **Already-set-up site — two ways:**
-  1. **In the app:** Log in as System Manager or PM Admin. On the Dashboard, a **"Load demo data"** card appears when the site has no demo data; click it to queue the load (runs in the background). If your user has no PM Employee record, the Dashboard shows a setup message with the same button.
-  2. **CLI:** `bench --site <site_name> process-meter-load-demo` or `bench --site <site_name> execute pulse.seed.seed.seed_dummy_data`
-  To remove demo data: API `pulse.api.demo.clear_demo_data` (System Manager / PM Admin) or `bench --site <site_name> execute pulse.seed.seed.clear_dummy_data`. See [docs/DataDummy.md](docs/DataDummy.md) for details.
+The quickest way to see Pulse in action is to load the built-in demo dataset — a realistic
+QSR chain with three branches, 19 employees across a four-level hierarchy, six SOP templates,
+and ~40 days of historical runs, scores, and corrective actions.
+
+**Load or remove via bench CLI:**
+
+```bash
+bench --site <site> pulse-load-demo
+bench --site <site> pulse-clear-demo
+```
+
+**Or via `bench execute`:**
+
+```bash
+bench --site <site> execute pulse.demo.seed.seed_demo_data
+bench --site <site> execute pulse.demo.seed.clear_demo_data
+```
+
+**What you get:**
+
+| What | Detail |
+|---|---|
+| 19 demo users | Password `Demo@123` on every account |
+| 4-level org hierarchy | Chairman → MD → Area Managers → Supervisors → Operators |
+| 3 branches + HQ | Branch N1, Branch N2, Branch S1, and HQ |
+| 6 SOP templates | 5 daily checklists + 1 weekly deep clean |
+| ~400 SOP runs | 40-day window ending yesterday — data is always current |
+| ~390 score snapshots | Daily own / team / combined scores per employee |
+| 18 corrective actions | Varied priority and status |
+
+**First-time setup:** the Frappe setup wizard includes a **"Load demo data"** checkbox on the
+Pulse slide — check it to seed automatically on wizard completion.
+
+**In-app:** System Manager and Pulse Admin users see a **"Load demo data"** card on the
+Dashboard when no employees exist; clicking it enqueues the seed in the background.
+
+For the full account list, org chart, SOP template details, and per-user completion rates,
+see [`pulse/demo/README.md`](pulse/demo/README.md).
 
 ---
 
